@@ -5,7 +5,9 @@ const PostData = ({
   handleSectorChange,
   handleSubmit,
   name,
-  selectedSectors,
+  selectedSectorsValues,
+  handleChecked,
+  agreeToTerms,
 }) => {
   return (
     <form className="data-form">
@@ -22,7 +24,7 @@ const PostData = ({
         multiple
         size="5"
         id="sectors"
-        value={selectedSectors}
+        value={selectedSectorsValues}
         onChange={handleSectorChange}
       >
         <option value="1">Manufacturing</option>
@@ -254,7 +256,11 @@ const PostData = ({
       <br />
       <div className="terms-check">
         <label>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={agreeToTerms}
+            onChange={handleChecked}
+          />
           Agree to terms
         </label>
       </div>
